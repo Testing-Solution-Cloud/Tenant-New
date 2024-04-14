@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: Tenant-New
+    package:
+        name: Tenant-New
+        api_version: '61.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Tenant-New/tests
+            options:
+                outputdir: robot/Tenant-New/results
+
+    robot_testdoc:
+        options:
+            path: robot/Tenant-New/tests
+            output: robot/Tenant-New/doc/Tenant-New_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
